@@ -23,6 +23,12 @@ const Sudentschema = new mongoose.Schema(
     Education: {
       type: [],
     },
+    Awards: {
+      type: [],
+    },
+    exam: {
+      type: [],
+    },
     Experience: {
       type: [],
     },

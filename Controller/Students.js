@@ -56,6 +56,8 @@ const updateStudent = async (req, res, next) => {
       Education,
       Experience,
       Links,
+      Awards,
+      exam,
     } = req.body;
 
     if (Name) updateData.Name = Name;
@@ -67,6 +69,8 @@ const updateStudent = async (req, res, next) => {
     if (Education) updateData.Education = Education;
     if (Experience) updateData.Experience = Experience;
     if (Links) updateData.Links = Links;
+    if (Awards) updateData.Awards = Awards;
+    if (exam) updateData.exam = exam;
 
     // Handle Image Update
     if (req.file) {
