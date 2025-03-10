@@ -15,6 +15,7 @@ const StudentsRouter = require("./Routes/Students");
 const StaffRouter = require("./Routes/Staff");
 const ResearchRouter = require("./Routes/Research");
 const PublicationRouter = require("./Routes/Publication");
+const HomeRouter = require("./Routes/Home");
 
 require("dotenv").config();
 
@@ -40,6 +41,7 @@ app.use("/api/v1/contacts", ContactsRouter);
 app.use("/api/v1/students", StudentsRouter);
 app.use("/api/v1/staff", StaffRouter);
 app.use("/api/v1/research", ResearchRouter);
+app.use("/api/v1/Home", HomeRouter);
 
 //Not Found Route Page
 app.use("*", (req, res, next) => {
