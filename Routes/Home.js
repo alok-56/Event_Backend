@@ -20,7 +20,6 @@ HomeRouter.post(
 
 HomeRouter.patch(
   "/update/home/:id",
-  IsAdmin,
   upload.fields([
     { name: "sliderImages", maxCount: 10 },
     { name: "scopeImage", maxCount: 1 },

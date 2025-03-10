@@ -59,11 +59,11 @@ const updateHome = async (req, res, next) => {
     // Delete old images from Cloudinary if new images are uploaded
     if (sliderImages && home.SliderImage.length > 0) {
       for (const image of home.SliderImage) {
-        await deleteImageFromCloudinary(image); // Delete each old image
+        await deleteImageFromCloudinary(image);
       }
     }
     if (scopeImage && home.scopeImage) {
-      await deleteImageFromCloudinary(home.scopeImage); // Delete old scope image
+      await deleteImageFromCloudinary(home.scopeImage); 
     }
     if (applicationImage && home.applicationImage) {
       await deleteImageFromCloudinary(home.applicationImage); // Delete old application image
