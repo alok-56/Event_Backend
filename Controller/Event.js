@@ -14,7 +14,7 @@ const createEvent = async (req, res, next) => {
       return next(new AppErr("Image is required", 400));
     }
 
-    let { Title, Description, type } = req.body;
+    let { Title, Description, type, link } = req.body;
     req.body.Image = req.file.path;
 
     let event = await Eventmodel.create(req.body);
@@ -49,10 +49,11 @@ const updateEvent = async (req, res, next) => {
     let updateData = {};
 
     // Check for body fields and update only provided values
-    const { Title, Description, type } = req.body;
+    const { Title, Description, type, link } = req.body;
     if (Title) updateData.Title = Title;
     if (Description) updateData.Description = Description;
     if (type) updateData.type = type;
+    if (link) updateData.link = link;
 
     // Handle Image Update
     if (req.file) {
@@ -80,7 +81,6 @@ const updateEvent = async (req, res, next) => {
 };
 
 const getEvent = async (req, res, next) => {
-  
   try {
     let { id } = req.params;
     if (!id) {
